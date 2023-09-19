@@ -1,0 +1,11 @@
+ejecucion docker
+-----docker exec -it notifications-api-postgres-1 bash----
+
+Conexion a postgres
+
+-----psql -U root -d Notifications_db-----
+
+
+Conexion a base de datos Notifications_db---
+
+\c Notifications_db
