@@ -17,7 +17,6 @@ func main() {
 	db.DB.AutoMigrate(models.User{})
 
 	r := mux.NewRouter()
-	r.HandleFunc("/", routes.HomeHandler)
 
 	r.HandleFunc("/users", routes.GetUsersHandler).Methods("GET")
 	r.HandleFunc("/users/{id}", routes.GetUserHandler).Methods("GET")
