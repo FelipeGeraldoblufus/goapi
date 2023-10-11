@@ -15,8 +15,14 @@ func main() {
 
 	db.DB.AutoMigrate(models.Product{})
 	db.DB.AutoMigrate(models.User{})
+	db.DB.AutoMigrate(models.Mail{})
 
 	r := mux.NewRouter()
+
+	r.HandleFunc("/api/mail", routes.PostMail).Methods("POST")
+	r.HandleFunc("/api/mail/{id}", routes.GetMail).Methods("GET")
+	r.HandleFunc("/api/mail/{id}", routes.UpdateMail).Methods("PUT")
+	r.HandleFunc("/api/mail/{id}", routes.DeleteMail).Methods("DELETE")
 
 	r.HandleFunc("/users", routes.GetUsersHandler).Methods("GET")
 	r.HandleFunc("/users/{id}", routes.GetUserHandler).Methods("GET")

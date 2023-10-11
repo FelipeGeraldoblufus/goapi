@@ -20,12 +20,12 @@ type Dest struct {
 	Name string
 }
 
-func EmailConnect() {
+func EmailConnect(toName, toAddress, subjecto string) {
 
 	from := mail.Address{"testingparago", "testingparago@gmail.com"}
-	to := mail.Address{"Felipe", "felogeraldo@gmail.com"}
-	subject := "Tienda De Mangas"
-	dest := Dest{Name: to.Address} // destinatario parseado para el template
+	to := mail.Address{toName, toAddress}
+	subject := subjecto
+	dest := Dest{Name: to.Name} // destinatario parseado para el template
 
 	// configuracion de headers
 
